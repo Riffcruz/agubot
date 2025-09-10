@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: discord-join-reporter
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    autoDeploy: true
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: RELAY_CHANNEL_ID
+        sync: false
+      - key: MY_USER_ID
+        sync: false
+      - key: WATCH_GUILD_IDS
+        sync: false
+      - key: WATCH_TEXT_CHANNEL_IDS
+        sync: false
+      - key: WATCH_VOICE_CHANNEL_IDS
+        sync: false
